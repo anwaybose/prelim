@@ -404,6 +404,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -532,6 +538,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -602,88 +614,6 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="problem-formulation" class="title-slide slide level1 agenda-slide center">
-<h1>Problem Formulation</h1>
-<div class="agenda-heading">
-<p>Contents:</p>
-</div>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Motivation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Background</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Problem Formulation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>pFedME</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>pFedBayes</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>DP-FTS-DE</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Conclusion</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Publications</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Thank you</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>References</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="weight-divergence-due-to-non-iid-data" class="slide level2">
-<h2>Weight Divergence due to Non-IID Data</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Weight Divergence due to Non-IID Data</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>a multi-class example where <span class="math inline">\(\mathcal{Y} = [\mathcal{C}]\)</span>, with <span class="math inline">\([\mathcal{C}] = [1,..,\mathcal{C}]\)</span> defined over a data space <span class="math inline">\(\mathcal{X}\)</span>.</li>
-</ul>
-<p><span class="math inline">\(\color{red}{\lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(c)}_{mT} \rVert \leq} \sum_{k=1}^K \frac{n^{(k)}}{\sum_{k=1}^K n^{(k)}} (a^{(K)})^T \lVert \boldsymbol{\omega}^{(f)}_{(m-1)T} - \boldsymbol{\omega}^{(c)}_{(m-1)T} \rVert\)</span></p>
-<p><span class="math inline">\(+ \eta \sum_{k=1}^K \frac{n^{(k)}}{\sum_{k=1}^K n^{(k)}} \color{red}{\sum_{i=1}^C \lVert p^{(k)}(y=i) - p(y=i) \rVert} \sum_{j=1}^{T-1} (a^{(k)j}) g_{max} (\boldsymbol{\omega}^{(c)}_{mT-1-k})\)</span></p>
-</div>
-</div>
-</div>
-
-<img data-src="./images/weight_divergence.png" style="width:200.0%" class="r-stretch quarto-figure-center"></section>
-<section id="personalized-federated-learning" class="slide level2">
-<h2>Personalized Federated Learning</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Personalized Federated Learning</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>aims to find such a global model <span class="math inline">\(\boldsymbol{\omega}^{(f)}_{mT}\)</span> which doesn’t diverge from the global optima <span class="math inline">\(\boldsymbol{\omega}^{(c)}_{mT}\)</span> also decreasing the distance between global update and the local update <span class="math inline">\(\boldsymbol{\omega}^{(k)}_{mT}\)</span> after <span class="math inline">\(m\)</span> finite synchronization, while the data distribution is non-IID, i.e., <span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [F_k(\boldsymbol{\omega} )] \neq f(\boldsymbol{\omega} )\)</span>.</li>
-</ul>
-<p><span class="math inline">\(\min_{\boldsymbol{\omega}} \{ \lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(c)}_{mT} \rVert + \sum_{k=1}^K \lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(k)}_{mT} \rVert \}\)</span></p>
-<p>such that, <span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [F_k(\boldsymbol{\omega} )] \neq f(\boldsymbol{\omega} )\)</span></p>
-</div>
-</div>
-</div>
 </section>
 <section id="stochastic-gradient-descent-sgd" class="slide level2">
 <h2>Stochastic Gradient Descent (SGD)</h2>
@@ -745,6 +675,94 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <figure>
 <p><img data-src="./images/sgd.png" style="width:400.0%"></p>
 </figure>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="problem-formulation" class="title-slide slide level1 agenda-slide center">
+<h1>Problem Formulation</h1>
+<div class="agenda-heading">
+<p>Contents:</p>
+</div>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Background</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Problem Formulation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>pFedME</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>pFedBayes</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>DP-FTS-DE</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Conclusion</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Publications</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Thank you</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>References</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="weight-divergence-due-to-non-iid-data" class="slide level2">
+<h2>Weight Divergence due to Non-IID Data</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Weight Divergence due to Non-IID Data</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>a multi-class example where <span class="math inline">\(\mathcal{Y} = [\mathcal{C}]\)</span>, with <span class="math inline">\([\mathcal{C}] = [1,..,\mathcal{C}]\)</span> defined over a data space <span class="math inline">\(\mathcal{X}\)</span>.</li>
+</ul>
+<p><span class="math inline">\(\color{red}{\lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(c)}_{mT} \rVert \leq} \sum_{k=1}^K \frac{n^{(k)}}{\sum_{k=1}^K n^{(k)}} (a^{(K)})^T \lVert \boldsymbol{\omega}^{(f)}_{(m-1)T} - \boldsymbol{\omega}^{(c)}_{(m-1)T} \rVert\)</span></p>
+<p><span class="math inline">\(+ \eta \sum_{k=1}^K \frac{n^{(k)}}{\sum_{k=1}^K n^{(k)}} \color{red}{\sum_{i=1}^C \lVert p^{(k)}(y=i) - p(y=i) \rVert} \sum_{j=1}^{T-1} (a^{(k)j}) g_{max} (\boldsymbol{\omega}^{(c)}_{mT-1-k})\)</span></p>
+</div>
+</div>
+</div>
+
+<img data-src="./images/weight_divergence.png" style="width:200.0%" class="r-stretch quarto-figure-center"></section>
+<section id="personalized-federated-learning" class="slide level2">
+<h2>Personalized Federated Learning</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Personalized Federated Learning</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>aims to find such a global model <span class="math inline">\(\boldsymbol{\omega}^{(f)}_{mT}\)</span> which doesn’t diverge from the global optima <span class="math inline">\(\boldsymbol{\omega}^{(c)}_{mT}\)</span> also decreasing the distance between global update and the local update <span class="math inline">\(\boldsymbol{\omega}^{(k)}_{mT}\)</span> after <span class="math inline">\(m\)</span> finite synchronization, while the data distribution is non-IID, i.e., <span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [F_k(\boldsymbol{\omega} )] \neq f(\boldsymbol{\omega} )\)</span>.</li>
+</ul>
+<p><span class="math inline">\(\min_{\boldsymbol{\omega}} \{ \lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(c)}_{mT} \rVert + \sum_{k=1}^K \lVert \boldsymbol{\omega}^{(f)}_{mT} - \boldsymbol{\omega}^{(k)}_{mT} \rVert \}\)</span></p>
+<p>such that, <span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [F_k(\boldsymbol{\omega} )] \neq f(\boldsymbol{\omega} )\)</span></p>
 </div>
 </div>
 </div>
@@ -854,6 +872,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -900,219 +924,6 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <ul>
 <li><span class="math inline">\(\lambda (\boldsymbol{\omega}_{m,t}^{(k)} - \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_{m,t}^{(k)}))\)</span> is used as an approximate of the gradient <span class="math inline">\(\nabla_{\boldsymbol{\omega}_{m,t}^{(k)}} F_k(\boldsymbol{\omega}_{m,t}^{(k)})\)</span><br>
 </li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 1</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>It is assumed that <span class="math inline">\(F_k\)</span> is either (a) <span class="math inline">\(\mu\)</span>-strongly convex or (b) non-convex but <span class="math inline">\(L\)</span>-smooth.</li>
-</ul>
-<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
-<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-1" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 1</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>It is assumed that <span class="math inline">\(F_k\)</span> is either (a) <span class="math inline">\(\mu\)</span>-strongly convex or (b) non-convex but <span class="math inline">\(L\)</span>-smooth.</li>
-</ul>
-<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
-<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 2</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>(Bounded Variance) The stochastic gradient of each client is bounded.</li>
-</ul>
-<p><span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [\lVert \nabla_{\boldsymbol{\omega}} \tilde{F_k}(\boldsymbol{\omega}, \mathcal{P}_k) - \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) \rVert^2] \leq \gamma_f^2\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-2" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 1</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
-<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 2</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [\lVert \nabla_{\boldsymbol{\omega}} \tilde{F_k}(\boldsymbol{\omega}, \mathcal{P}_k) - \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) \rVert^2] \leq \gamma_f^2\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Assumption 3</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>(Bounded Diversity) The variance of local gradient to global gradient is bounded</li>
-</ul>
-<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \lVert \nabla_{\boldsymbol{\omega}_k} F_k(\boldsymbol{\omega}_k) - \nabla_{\boldsymbol{\omega}} f(\boldsymbol{\omega}) \rVert^2 \leq \sigma_f^2\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-3" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem 1 (Convex loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Let Assumptions 1(a) and 2 holds</li>
-</ul>
-<p><span class="math inline">\((a) \quad \mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] \leq \mathcal{O}(\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] )\)</span> <span class="math inline">\(\quad \quad = \mathcal{O}(\Delta_{0 \mu_F}\exp(-\eta \mu_F \frac{M}{2})) + \mathcal{O}(\frac{(\frac{N}{S} - 1)\sigma_{F,1}^2}{\mu_F M N}) + \mathcal{O}(\frac{(T\sigma_{F,1}^2 + \lambda^2 \delta^2)\kappa_F}{T(M\beta \mu_F)^2})\)</span></p>
-<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \frac{1}{\mu_F} \mathcal{O} (\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f^\star]) + \mathcal{O} (\frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-4" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem 1 (Convex loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Let Assumptions 1(a) and 2 holds</li>
-</ul>
-<p><span class="math inline">\((a) \quad \mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] \leq \mathcal{O}(\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] )\)</span> <span class="math inline">\(\quad \quad = \mathcal{O}(\Delta_{0 \mu_F}\exp(-\eta \mu_F \frac{M}{2})) + \mathcal{O}(\frac{(\frac{N}{S} - 1)\sigma_{F,1}^2}{\mu_F M N}) + \mathcal{O}(\frac{(T\sigma_{F,1}^2 + \lambda^2 \delta^2)\kappa_F}{T(M\beta \mu_F)^2})\)</span></p>
-<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \frac{1}{\mu_F} \mathcal{O} (\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f^\star]) + \mathcal{O} (\frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Remarks 1 (Convex loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><p>By selecting <span class="math inline">\(S\)</span> such that <span class="math inline">\(S/N\)</span> corresponds to a fixed ratio, e.g., <span class="math inline">\(0.5\)</span>, we can achieve a linear speedup of <span class="math inline">\(\mathcal{O}(1/(MN))\)</span> in relation to communication rounds for client sampling error.</p></li>
-<li><p>personalized models converges, on average, towards a norm ball centered at <span class="math inline">\(\boldsymbol{\omega}^\star\)</span> with a radius of <span class="math inline">\(\mathcal{O}(\frac{\lambda^2 \delta^2}{\mu_F} + \frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-5" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem 2 (Non-Convex but smooth loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>When Assumptions 1(b), 2 and 3 holds</li>
-</ul>
-<p><span class="math inline">\((a) \quad \mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) =\)</span> <span class="math inline">\(\quad \quad \mathcal{O}(\frac{\Delta_f}{\eta M} + \frac{(\Delta_f L_f \sigma_{F,2}^2(N/S -1))^{1/2}}{\sqrt{MN}} + \frac{(\Delta_f)^{2/3}(T \sigma_{F,2}^2 + \lambda^2 \delta^2)^{1/3}}{\beta^{4/3} T^{1/3} M^{1/3}} + \lambda^2 \delta^2)\)</span></p>
-<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) + \mathcal{O} (\frac{\sigma_{F,2}^2}{\lambda^2} + \delta^2)\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="convergence-analysis-of-pfedme-6" class="slide level2">
-<h2>Convergence analysis of pFedME</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem 2 (Non-Convex but smooth loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>When Assumptions 1(b), 2 and 3 holds</li>
-</ul>
-<p><span class="math inline">\((a) \quad \mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) =\)</span> <span class="math inline">\(\quad \quad \mathcal{O}(\frac{\Delta_f}{\eta M} + \frac{(\Delta_f L_f \sigma_{F,2}^2(N/S -1))^{1/2}}{\sqrt{MN}} + \frac{(\Delta_f)^{2/3}(T \sigma_{F,2}^2 + \lambda^2 \delta^2)^{1/3}}{\beta^{4/3} T^{1/3} M^{1/3}} + \lambda^2 \delta^2)\)</span></p>
-<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) + \mathcal{O} (\frac{\sigma_{F,2}^2}{\lambda^2} + \delta^2)\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Remarks 2 (Non-Convex but smooth loss)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>we can attain a sublinear speedup of <span class="math inline">\(\mathcal{O}(\frac{1}{(MTN)^{2/3}})\)</span>, a notable improvement over the typical sublinear speedup of <span class="math inline">\(\mathcal{O}(\frac{1}{\sqrt{MTN}})\)</span> observed in existing convergence analyses for nonconvex Federated Learning.</li>
 </ul>
 </div>
 </div>
@@ -1214,6 +1025,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Thank you</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
@@ -1332,325 +1149,6 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <figure>
 <p><img data-src="./images/pfedbayes_global.png" style="width:100.0%"></p>
 </figure>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition 1 (Hellinger Distance)</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>The Hellinger Distance is defiend as</li>
-</ul>
-<p><span class="math inline">\(d^2(P_{\boldsymbol{\theta}}^k, P^k) = \mathbb{E}_{\boldsymbol{X}_k} (1 - \exp{\{-[f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k)]^2/(8 \sigma_{\epsilon}^2)\}})\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Definition 2</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(r_n = ((L+1)T/n)\log M +(T/n) \log (s_0 \sqrt{n/T})\)</span></p>
-<p><span class="math inline">\(\xi_n^k = \inf_{\lVert \boldsymbol{\theta} \rVert_{\infty} \leq B} \lVert f_{\boldsymbol{\theta}}^k - f^k \rVert^2_\infty\)</span></p>
-<p><span class="math inline">\(\varepsilon_n = n^{-\frac{1}{2}\sqrt{(L+1)T\log M +T \log (s_0 \sqrt{n/T})}\log^{\delta}(n)}\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-1" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>client subproblem</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
-<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-2" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>client subproblem</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
-<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{\omega}^\star\)</span> being the optimal variational solution and <span class="math inline">\(\hat{q}_k(\boldsymbol{\theta})\)</span></li>
-</ul>
-<p><span class="math inline">\(\hat{q}_k(\boldsymbol{\theta}) = \text{arg} \inf_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta})) \}\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-3" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>client subproblem</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
-<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{\omega}^\star\)</span> being the optimal variational solution and <span class="math inline">\(\hat{q}_k(\boldsymbol{\theta})\)</span></li>
-</ul>
-<p><span class="math inline">\(\hat{q}_k(\boldsymbol{\theta}) = \text{arg} \inf_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta})) \}\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>aim</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>provide an upper bound to the term</li>
-</ul>
-<p><span class="math display">\[\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\]</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-4" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma 1</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-5" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma 1</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma 2</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \leq n(C'\zeta r_n +\frac{C''}{N}\sum_{k=1}^N \xi_n^k )\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-6" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma 1</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma 2</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \leq n(C'\zeta r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k )\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C \varepsilon_n^2 + C' r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-7" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Theorem</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C \varepsilon_n^2 + C' r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k\)</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Remarks</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><p>first and second terms belong to the estimation error while the third term is the approximation error</p></li>
-<li><p>the estimation error decreases with the increase of sample size <span class="math inline">\(n\)</span></p></li>
-</ul>
-<p><span class="math inline">\(\varepsilon_n^2 = \frac{1}{(n^{\frac{1}{2}\sqrt{(L+1)T\log M +T \log (s_0 \sqrt{n/T})}\log^{\delta}(n)})^2}\)</span></p>
-<p><span class="math inline">\(r_n = (\frac{(L+1)T}{n})\log M +(\frac{T}{n}) \log (s_0 \sqrt{\frac{n}{T}})\)</span></p>
-<ul>
-<li>with the increase of total number of parameters <span class="math inline">\(T\)</span> (width of the neural network), the estimation error increases but the approximation error decreases</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-8" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>choosing <span class="math inline">\(T = C_1 n^{d/(2\beta+d)}\)</span></li>
-</ul>
-<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\)</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-9" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>choosing <span class="math inline">\(T = C_1 n^{d/(2\beta+d)}\)</span></li>
-</ul>
-<p><span class="math display">\[\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\]</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lemma</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>for bounded functions <span class="math inline">\(\lVert f^k \rVert_\infty \leq F\)</span> and <span class="math inline">\(\lVert f_{\boldsymbol{\theta}}^k \rVert_\infty \leq F\)</span></li>
-</ul>
-<p><span class="math display">\[\frac{d^2( P_{\boldsymbol{\theta}}^k, P^k)}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \geq \frac{1-\exp(-\frac{4F^2}{8\sigma_\epsilon^2})}{4F^2} = C_F\]</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="pfedbayes-theoretical-ananlysis-10" class="slide level2">
-<h2>pFedBayes Theoretical Ananlysis</h2>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>minimax optimality of generalizaton error</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><p><span class="math inline">\(\frac{C_F}{N} \sum_{k=1}^N \int \color{red}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \color{red}{\leq} C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\)</span></p></li>
-<li><p><span class="math inline">\(\inf_{\lVert f^k \rVert_\infty \leq F} \sup_{\lVert f_{\boldsymbol{\theta}}^k \rVert_\infty \leq F} \frac{C_F}{N} \sum_{k=1}^N \int \color{red}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \color{red}{\geq} C_3 n^{- \frac{2 \beta}{2 \beta +d}}\)</span></p></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>note</strong></p>
-</div>
-<div class="callout-content">
-<p>the convergence rate of the generalization error of pFedBayes is minimax optimal up to a logarithmic term.</p>
 </div>
 </div>
 </div>
@@ -1777,6 +1275,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Thank you</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
@@ -2199,6 +1703,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -2312,6 +1822,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -2374,6 +1890,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 <p>Thank you</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>References</p>
 </div></li>
 </ul>
@@ -2391,6 +1913,632 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 </div>
 <div class="callout-content">
 
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="appendix-1" class="title-slide slide level1 agenda-slide center">
+<h1>Appendix 1</h1>
+<div class="agenda-heading">
+<p>Contents:</p>
+</div>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Background</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Problem Formulation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>pFedME</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>pFedBayes</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>DP-FTS-DE</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Conclusion</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Publications</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Thank you</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>References</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 1</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>It is assumed that <span class="math inline">\(F_k\)</span> is either (a) <span class="math inline">\(\mu\)</span>-strongly convex or (b) non-convex but <span class="math inline">\(L\)</span>-smooth.</li>
+</ul>
+<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
+<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-1" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 1</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>It is assumed that <span class="math inline">\(F_k\)</span> is either (a) <span class="math inline">\(\mu\)</span>-strongly convex or (b) non-convex but <span class="math inline">\(L\)</span>-smooth.</li>
+</ul>
+<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
+<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 2</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>(Bounded Variance) The stochastic gradient of each client is bounded.</li>
+</ul>
+<p><span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [\lVert \nabla_{\boldsymbol{\omega}} \tilde{F_k}(\boldsymbol{\omega}, \mathcal{P}_k) - \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) \rVert^2] \leq \gamma_f^2\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-2" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 1</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\((a) \quad F_k(\boldsymbol{\omega}) \geq F_k(\boldsymbol{\omega}') + \langle \nabla F_k(\boldsymbol{\omega}'), \boldsymbol{\omega} - \boldsymbol{\omega}' \rangle + \frac{\mu}{2} \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert^2,\)</span></p>
+<p><span class="math inline">\((b) \quad \lVert \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) - \nabla_{\boldsymbol{\omega}'} F_k(\boldsymbol{\omega}')\rVert \leq L \lVert \boldsymbol{\omega} - \boldsymbol{\omega}'\rVert\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 2</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\mathbb{E}_{\mathcal{P}_k} [\lVert \nabla_{\boldsymbol{\omega}} \tilde{F_k}(\boldsymbol{\omega}, \mathcal{P}_k) - \nabla_{\boldsymbol{\omega}} F_k(\boldsymbol{\omega}) \rVert^2] \leq \gamma_f^2\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Assumption 3</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>(Bounded Diversity) The variance of local gradient to global gradient is bounded</li>
+</ul>
+<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \lVert \nabla_{\boldsymbol{\omega}_k} F_k(\boldsymbol{\omega}_k) - \nabla_{\boldsymbol{\omega}} f(\boldsymbol{\omega}) \rVert^2 \leq \sigma_f^2\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-3" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem 1 (Convex loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let Assumptions 1(a) and 2 holds</li>
+</ul>
+<p><span class="math inline">\((a) \quad \mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] \leq \mathcal{O}(\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] )\)</span> <span class="math inline">\(\quad \quad = \mathcal{O}(\Delta_{0 \mu_F}\exp(-\eta \mu_F \frac{M}{2})) + \mathcal{O}(\frac{(\frac{N}{S} - 1)\sigma_{F,1}^2}{\mu_F M N}) + \mathcal{O}(\frac{(T\sigma_{F,1}^2 + \lambda^2 \delta^2)\kappa_F}{T(M\beta \mu_F)^2})\)</span></p>
+<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \frac{1}{\mu_F} \mathcal{O} (\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f^\star]) + \mathcal{O} (\frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-4" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem 1 (Convex loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Let Assumptions 1(a) and 2 holds</li>
+</ul>
+<p><span class="math inline">\((a) \quad \mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] \leq \mathcal{O}(\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f(\boldsymbol{\omega}^\star)] )\)</span> <span class="math inline">\(\quad \quad = \mathcal{O}(\Delta_{0 \mu_F}\exp(-\eta \mu_F \frac{M}{2})) + \mathcal{O}(\frac{(\frac{N}{S} - 1)\sigma_{F,1}^2}{\mu_F M N}) + \mathcal{O}(\frac{(T\sigma_{F,1}^2 + \lambda^2 \delta^2)\kappa_F}{T(M\beta \mu_F)^2})\)</span></p>
+<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \frac{1}{\mu_F} \mathcal{O} (\mathbb{E}[f(\hat{\boldsymbol{\omega}}_M) - f^\star]) + \mathcal{O} (\frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Remarks 1 (Convex loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>By selecting <span class="math inline">\(S\)</span> such that <span class="math inline">\(S/N\)</span> corresponds to a fixed ratio, e.g., <span class="math inline">\(0.5\)</span>, we can achieve a linear speedup of <span class="math inline">\(\mathcal{O}(1/(MN))\)</span> in relation to communication rounds for client sampling error.</p></li>
+<li><p>personalized models converges, on average, towards a norm ball centered at <span class="math inline">\(\boldsymbol{\omega}^\star\)</span> with a radius of <span class="math inline">\(\mathcal{O}(\frac{\lambda^2 \delta^2}{\mu_F} + \frac{\sigma_{F,1}^2}{\lambda^2} + \delta^2)\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-5" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem 2 (Non-Convex but smooth loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>When Assumptions 1(b), 2 and 3 holds</li>
+</ul>
+<p><span class="math inline">\((a) \quad \mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) =\)</span> <span class="math inline">\(\quad \quad \mathcal{O}(\frac{\Delta_f}{\eta M} + \frac{(\Delta_f L_f \sigma_{F,2}^2(N/S -1))^{1/2}}{\sqrt{MN}} + \frac{(\Delta_f)^{2/3}(T \sigma_{F,2}^2 + \lambda^2 \delta^2)^{1/3}}{\beta^{4/3} T^{1/3} M^{1/3}} + \lambda^2 \delta^2)\)</span></p>
+<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) + \mathcal{O} (\frac{\sigma_{F,2}^2}{\lambda^2} + \delta^2)\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="convergence-analysis-of-pfedme-6" class="slide level2">
+<h2>Convergence analysis of pFedME</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem 2 (Non-Convex but smooth loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>When Assumptions 1(b), 2 and 3 holds</li>
+</ul>
+<p><span class="math inline">\((a) \quad \mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) =\)</span> <span class="math inline">\(\quad \quad \mathcal{O}(\frac{\Delta_f}{\eta M} + \frac{(\Delta_f L_f \sigma_{F,2}^2(N/S -1))^{1/2}}{\sqrt{MN}} + \frac{(\Delta_f)^{2/3}(T \sigma_{F,2}^2 + \lambda^2 \delta^2)^{1/3}}{\beta^{4/3} T^{1/3} M^{1/3}} + \lambda^2 \delta^2)\)</span></p>
+<p><span class="math inline">\((b) \quad 1/N \sum_{k=1}^N \mathbb{E}[\lVert \hat{\boldsymbol{\omega}}_k(\boldsymbol{\omega}_M) - \boldsymbol{\omega}^\star\rVert^2] \leq \mathcal{O}(\mathbb{E}[\lVert \nabla f(\boldsymbol{\omega}_m^\star) \rVert^2]) + \mathcal{O} (\frac{\sigma_{F,2}^2}{\lambda^2} + \delta^2)\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Remarks 2 (Non-Convex but smooth loss)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>we can attain a sublinear speedup of <span class="math inline">\(\mathcal{O}(\frac{1}{(MTN)^{2/3}})\)</span>, a notable improvement over the typical sublinear speedup of <span class="math inline">\(\mathcal{O}(\frac{1}{\sqrt{MTN}})\)</span> observed in existing convergence analyses for nonconvex Federated Learning.</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="appendix-2" class="title-slide slide level1 agenda-slide center">
+<h1>Appendix 2</h1>
+<div class="agenda-heading">
+<p>Contents:</p>
+</div>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Background</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Problem Formulation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>pFedME</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>pFedBayes</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>DP-FTS-DE</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Conclusion</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Publications</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Thank you</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Appendix 2</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>References</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition 1 (Hellinger Distance)</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>The Hellinger Distance is defiend as</li>
+</ul>
+<p><span class="math inline">\(d^2(P_{\boldsymbol{\theta}}^k, P^k) = \mathbb{E}_{\boldsymbol{X}_k} (1 - \exp{\{-[f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k)]^2/(8 \sigma_{\epsilon}^2)\}})\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Definition 2</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(r_n = ((L+1)T/n)\log M +(T/n) \log (s_0 \sqrt{n/T})\)</span></p>
+<p><span class="math inline">\(\xi_n^k = \inf_{\lVert \boldsymbol{\theta} \rVert_{\infty} \leq B} \lVert f_{\boldsymbol{\theta}}^k - f^k \rVert^2_\infty\)</span></p>
+<p><span class="math inline">\(\varepsilon_n = n^{-\frac{1}{2}\sqrt{(L+1)T\log M +T \log (s_0 \sqrt{n/T})}\log^{\delta}(n)}\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-1" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>client subproblem</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
+<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-2" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>client subproblem</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
+<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{\omega}^\star\)</span> being the optimal variational solution and <span class="math inline">\(\hat{q}_k(\boldsymbol{\theta})\)</span></li>
+</ul>
+<p><span class="math inline">\(\hat{q}_k(\boldsymbol{\theta}) = \text{arg} \inf_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta})) \}\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-3" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>client subproblem</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(l_n (P^k, P_{\boldsymbol{\theta}}^k) = \frac{\log P^k(\mathcal{D}_k)}{\log P_{\boldsymbol{\theta}}^k(\mathcal{D}_k)}\)</span></p>
+<p><span class="math inline">\(\text{Client:} \quad f_k(\boldsymbol{\omega}) = \min_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega(\boldsymbol{\theta})) \}\)</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{\omega}^\star\)</span> being the optimal variational solution and <span class="math inline">\(\hat{q}_k(\boldsymbol{\theta})\)</span></li>
+</ul>
+<p><span class="math inline">\(\hat{q}_k(\boldsymbol{\theta}) = \text{arg} \inf_{q_k(\boldsymbol{\theta}) \in \mathcal{Q}_k} \{ \int l_n (P^k, P_{\boldsymbol{\theta}}^k)q_k(\boldsymbol{\theta})d(\boldsymbol{\theta}) + \zeta KL(q_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta})) \}\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>aim</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>provide an upper bound to the term</li>
+</ul>
+<p><span class="math display">\[\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-4" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma 1</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-5" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma 1</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma 2</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \leq n(C'\zeta r_n +\frac{C''}{N}\sum_{k=1}^N \xi_n^k )\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-6" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma 1</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N} \sum_{k=1}^N \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{n}\{ \frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \} +C \varepsilon_n^2\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma 2</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N}[\frac{1}{\zeta}\int l_n(P^k, P_{\boldsymbol{\theta}}^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})+ KL(\hat{q}_k(\boldsymbol{\theta}) || \omega^\star(\boldsymbol{\theta}))] \leq n(C'\zeta r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k )\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C \varepsilon_n^2 + C' r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-7" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Theorem</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C \varepsilon_n^2 + C' r_n +\frac{C''}{N \zeta}\sum_{k=1}^N \xi_n^k\)</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Remarks</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>first and second terms belong to the estimation error while the third term is the approximation error</p></li>
+<li><p>the estimation error decreases with the increase of sample size <span class="math inline">\(n\)</span></p></li>
+</ul>
+<p><span class="math inline">\(\varepsilon_n^2 = \frac{1}{(n^{\frac{1}{2}\sqrt{(L+1)T\log M +T \log (s_0 \sqrt{n/T})}\log^{\delta}(n)})^2}\)</span></p>
+<p><span class="math inline">\(r_n = (\frac{(L+1)T}{n})\log M +(\frac{T}{n}) \log (s_0 \sqrt{\frac{n}{T}})\)</span></p>
+<ul>
+<li>with the increase of total number of parameters <span class="math inline">\(T\)</span> (width of the neural network), the estimation error increases but the approximation error decreases</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-8" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>choosing <span class="math inline">\(T = C_1 n^{d/(2\beta+d)}\)</span></li>
+</ul>
+<p><span class="math inline">\(\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-9" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>choosing <span class="math inline">\(T = C_1 n^{d/(2\beta+d)}\)</span></li>
+</ul>
+<p><span class="math display">\[\frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lemma</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>for bounded functions <span class="math inline">\(\lVert f^k \rVert_\infty \leq F\)</span> and <span class="math inline">\(\lVert f_{\boldsymbol{\theta}}^k \rVert_\infty \leq F\)</span></li>
+</ul>
+<p><span class="math display">\[\frac{d^2( P_{\boldsymbol{\theta}}^k, P^k)}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \geq \frac{1-\exp(-\frac{4F^2}{8\sigma_\epsilon^2})}{4F^2} = C_F\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="pfedbayes-theoretical-ananlysis-10" class="slide level2">
+<h2>pFedBayes Theoretical Ananlysis</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>minimax optimality of generalizaton error</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p><span class="math inline">\(\frac{C_F}{N} \sum_{k=1}^N \int \color{red}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \leq \frac{1}{N}\sum_{k=1}^{N} \int d^2( P_{\boldsymbol{\theta}}^k, P^k)\hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta})\)</span> <span class="math inline">\(\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \color{red}{\leq} C_2 n^{-\frac{2\beta}{2\beta+d}} \log^{2\delta'}(n)\)</span></p></li>
+<li><p><span class="math inline">\(\inf_{\lVert f^k \rVert_\infty \leq F} \sup_{\lVert f_{\boldsymbol{\theta}}^k \rVert_\infty \leq F} \frac{C_F}{N} \sum_{k=1}^N \int \color{red}{\lVert f_{\boldsymbol{\theta}}^k(\boldsymbol{X}_k) - f^k(\boldsymbol{X}_k) \rVert^2_2} \hat{q}_k(\boldsymbol{\theta}) d(\boldsymbol{\theta}) \color{red}{\geq} C_3 n^{- \frac{2 \beta}{2 \beta +d}}\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>note</strong></p>
+</div>
+<div class="callout-content">
+<p>the convergence rate of the generalization error of pFedBayes is minimax optimal up to a logarithmic term.</p>
 </div>
 </div>
 </div>
@@ -2429,6 +2577,12 @@ Anway Bose <a href="https://orcid.org/0000-0002-7145-6203" class="quarto-title-a
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Thank you</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Appendix 1</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Appendix 2</p>
 </div></li>
 <li><div class="agenda-active">
 <p>References</p>
